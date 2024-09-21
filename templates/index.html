@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaspreet's Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio of Jaspreet Kaur Narang, a Software Engineer specializing in web development and data analysis.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Hamburger Button -->
+    <div id="navToggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Fullscreen Menu -->
+    <div id="fullscreenMenu" class="fullscreen-menu">
+        <a href="#about" class="menu-item">About</a>
+        <a href="#experience" class="menu-item">Experience</a>
+        <a href="#projects" class="menu-item">Projects</a>
+        <a href="#education" class="menu-item">Education</a>
+        <a href="#contact" class="menu-item">Contact</a>
+
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Jaspreet Kaur Narang</h1>
+            <p>Software Engineer | Data Analyst</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <!-- About Section -->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Hello! I'm Jaspreet Kaur Narang, Detail-oriented and highly motivated software engineer with 3+ years of experience in developing and optimizing data-driven solutions. 
+                    Seeking to leverage my expertise in Python, cloud computing, 
+                    and technical support to contribute to dynamic teams and drive impactful projects. 
+                    Eager to apply strong analytical, leadership, and problem-solving skills in a challenging environment that fosters innovation and career growth.</p>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="experience">
+                <h2>Experience</h2>
+            <div class="experience-section">
+                <div class="project-item">
+                    <h3>Software Engineer - Python | Accenture</h3>
+                    <ul>
+                        •Completed ETL operations for 50,000+ data records using Python (pandas, numpy) and Excel VLOOKUP, successfully loading 45,500 records into MongoDB
+                        •Developed and optimized 1500 lines of code in Python for efficient data processing, resulting in a 30% improvement in pre-processing time, and achieved 100% of assigned targets in Q2 FY2021
+                        •Collaborated with 15 team members through JIRA and Bitbucket, resulting in an 85% increase in code quality and project efficiency. Implemented agile methodologies, leading to a 90% increase in project delivery speed
+                        •Facilitated data visualization using Tableau, Collibra, and Neo4j for 15+ data sets, enabling stakeholders to make informed decisions based on the analysis
+                    </ul>
+                </div>
+            </div>
+                <div class="project-item">
+                    <h3>Web Developer | SIEC Education PVT LTD</h3>
+                    <ul>
+                        •Designed and developed a 10-page website, increasing user engagement by 70% through responsive design and optimized UI/UX
+                        •Reduced page load time by 40% by implementing efficient coding practices in HTML, CSS, and JavaScript
+                        •Collaborated with graphic designers to create visually appealing layouts, ensuring the website reflected the company’s branding and marketing goals
+                        •Conducted thorough testing and debugging of web applications, resulting in a seamless user experience and a 15% reduction in user-reported issues
+                        •Assisted in integrating third-party APIs, enhancing the website’s functionality, and providing additional value to users
+                    </ul>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <h3>Organ Donor Prediction</h3>
+                    <p>Developed a predictive model to identify potential organ donors in ICUs.</p>
+                </div>
+                <div class="project-item">
+                    <h3>AI Personal Dietician</h3>
+                    <p>Created an AI chatbot that generates personalized meal plans.</p>
+                </div>
+            </section>
+
+
+            <section class="education" id="education">
+                <h2>Education</h2>
+                <div class="education-cards">
+                    <div class="education-card">
+                        <h3>Master’s Degree in Computer Science</h3>
+                        <p>Lakehead University (Sept 2022 - Apr 2024)</p>
+                        <p>Relevant Courses: Data Structures, Machine Learning, Web Development</p>
+                    </div>
+            
+                    <div class="education-card">
+                        <h3>Bachelor’s Degree in Information Technology</h3>
+                        <p>GGSIPU (Aug 2015 - May 2019)</p>
+                        <p>Relevant Courses: Database Management, Network Security, Cloud Computing</p>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <form id="contactForm">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jaspreet Kaur Narang</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+
+    <script>
+            
+        // Hamburger button toggle
+        const navToggle = document.getElementById('navToggle');
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
+
+        // Toggle menu open/close on hamburger click
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            fullscreenMenu.classList.toggle('open');
+        });
+
+        // Smooth scroll and close the menu on item click
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Close the menu when an option is clicked
+                navToggle.classList.remove('active');
+                fullscreenMenu.classList.remove('open');
+            });
+        });
+
+
+    
+        // Scroll to top button functionality
+        let scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            scrollTopBtn.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
+        };
+        scrollTopBtn.onclick = function() {
+            document.documentElement.scrollTop = 0;
+        };
+
+    
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
+    
+            if (name && email && message) {
+                alert('Thank you, ' + name + '! Your message has been sent.');
+                this.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+    
+
+</body>
+</html>

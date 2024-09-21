@@ -1,0 +1,425 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #222;
+    padding: 20px;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    padding: 15px 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+nav a:hover {
+    color: #007BFF;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #af8c6f;
+    color: #222;
+}
+
+/* Project Section */
+.projects {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+}
+
+.project-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.education {
+    padding: 40px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.education h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.education-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.education-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    transition: transform 0.3s ease;
+}
+
+.education-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.education-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+}
+
+
+/* Contact Section */
+.contact {
+    padding: 40px 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Aesthetic Color Theme */
+:root {
+    --primary-color: #A9CCE3; /* Soft Blue */
+    --secondary-color: #D6A4E8; /* Pale Purple */
+    --accent-color: #F7B7A3; /* Light Coral */
+    --neutral-color: #F0F0F0; /* Light Gray */
+    --text-color: #333333; /* Dark Charcoal */
+    --white-color: #FFFFFF;
+}
+
+/* Basic Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--neutral-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff; /* Adjust color if needed */
+    transition: all 0.4s ease; /* Smooth transitions */
+    transform-origin: center;
+}
+
+/* Active state transitions */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Hide middle line */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Fullscreen Menu */
+.fullscreen-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark transparent background */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.fullscreen-menu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fullscreen-menu a {
+    color: white;
+    font-size: 2rem;
+    margin: 20px;
+    text-decoration: none;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fullscreen-menu a:hover {
+    color: #ffcc00; /* Optional hover effect */
+}
+
+.fullscreen-menu.open a {
+    transform: translateY(0);
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Form */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contactForm input, #contactForm textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+#contactForm button {
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+#contactForm button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    padding: 20px;
+    color: var(--white-color);
+    text-align: center;
+}
+
+/* Scroll-to-Top Button */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    background-color: #D6A4E8; /* Button background */
+    color: white;              /* Icon color */
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;        /* Rounded button */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover Effect */
+#scrollTopBtn:hover {
+    background-color: #ffcc00;  /* Change background on hover */
+    color: black;               /* Icon color on hover */
+    transform: scale(1.1);      /* Slight zoom on hover */
+}
+
+/* Button Icon Styling */
+#scrollTopBtn i {
+    font-size: 20px;  /* Icon size */
+}
+
+
+
