@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaspreet's Portfolio</title>
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <meta name="description" content="Portfolio of Jaspreet Kaur Narang, a Software Engineer specializing in web development and data analysis.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -25,6 +25,7 @@
         <a href="#experience" class="menu-item">Experience</a>
         <a href="#projects" class="menu-item">Projects</a>
         <a href="#education" class="menu-item">Education</a>
+        <a href="#certifications" class="menu-item">Certifications</a>
         <a href="#contact" class="menu-item">Contact</a>
 
     </div>
@@ -50,7 +51,7 @@
                     Eager to apply strong analytical, leadership, and problem-solving skills in a challenging environment that fosters innovation and career growth.</p>
             </section>
 
-            <!-- Projects Section -->
+            <!-- Experience Section -->
             <section id="experience">
                 <h2>Experience</h2>
             <div class="experience-section">
@@ -76,6 +77,7 @@
                 </div>
             </section>
 
+            <!-- Projects Section -->
             <section id="projects">
                 <h2>Projects</h2>
                 <div class="project-item">
@@ -88,7 +90,7 @@
                 </div>
             </section>
 
-
+            <!-- Education Section -->
             <section class="education" id="education">
                 <h2>Education</h2>
                 <div class="education-cards">
@@ -105,6 +107,34 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Certifications Section -->
+            <section id="certifications" class="certifications-section">
+                <h2>Certifications</h2>
+                <div class="certifications-container">
+                    <div class="certification-card">
+                        <h3>AWS Certified Developer - Associate</h3>
+                        <a href="https://www.credly.com/badges/b60651bd-9820-4e1e-9526-1a53d4204985" target="_blank">View Certification</a>
+                    </div>
+                    <div class="certification-card">
+                        <h3>Microsoft Certified: Azure Fundamentals</h3>
+                        <a href="https://www.credly.com/badges/07d1cebd-38bc-4e26-934a-c2abce4cc5c9" target="_blank">View Certification</a>
+                    </div>
+                    <div class="certification-card">
+                        <h3>Neo4j Certified Professional</h3>
+                        <a href="https://www.linkedin.com/in/jaspreetnarang83/details/certifications/" target="_blank">View Certification</a>
+                    </div>
+                    <div class="certification-card">
+                        <h3>Snowflake Fundamentals Training</h3>
+                        <a href="https://www.linkedin.com/in/jaspreetnarang83/details/certifications/" target="_blank">View Certification</a>
+                    </div>
+                    <!-- <div class="certification-card">
+                        <h3>Tableau Desktop Specialist</h3>
+                        <a href="https://www.your-tableau-link.com" target="_blank">View Certification</a>
+                    </div> -->
+                </div>
+            </section>
+            
             
 
             <!-- Contact Section -->
