@@ -13,6 +13,25 @@
 </head>
 <body>
 
+    <body>
+        <!-- Modal Structure -->
+        <div id="flashModal" class="modal">
+            <div class="modal-content">
+                <span id="flashMessageText"></span>
+            </div>
+        </div>
+        
+
+        <div id="flashMessageData" style="display: none;">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <span data-category="{{ category }}" data-message="{{ message }}"></span>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    
     <!-- Hamburger Button -->
     <div id="navToggle" class="hamburger">
         <span></span>
@@ -139,15 +158,22 @@
             
 
             <!-- Contact Section -->
-            <section id="contact">
-                <h2>Contact Me</h2>
-                <form id="contactForm">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <section class="contact" id="contact">
+                <h2>Drop Me a Line!</h2>
+                <form id="contactForm" method="POST" action="/contact">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
                     <button type="submit">Send Message</button>
                 </form>
             </section>
+            
         </div>
     </main>
 
@@ -193,8 +219,6 @@
             });
         });
 
-
-    
         // Scroll to top button functionality
         let scrollTopBtn = document.getElementById("scrollTopBtn");
         window.onscroll = function() {
@@ -204,23 +228,42 @@
             document.documentElement.scrollTop = 0;
         };
 
-    
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            let name = document.getElementById('name').value;
-            let email = document.getElementById('email').value;
-            let message = document.getElementById('message').value;
-    
-            if (name && email && message) {
-                alert('Thank you, ' + name + '! Your message has been sent.');
-                this.reset();
-            } else {
-                alert('Please fill in all fields.');
-            }
-        });
-    </script>
-    
+
+    // Function to show flash message in modal
+    function showFlashMessage(message, category) {
+        const modal = document.getElementById('flashModal');
+        const flashMessageText = document.getElementById('flashMessageText');
+        
+        flashMessageText.textContent = message;
+        modal.style.display = "block";
+
+        // Set category-specific class for the modal
+        const modalContent = modal.querySelector('.modal-content');
+        if (category === 'success') {
+            modalContent.classList.add('success');
+        } else {
+            modalContent.classList.add('error');
+        }
+
+        // Hide the modal after 3 seconds
+        setTimeout(() => {
+            modal.style.display = "none";
+            modalContent.classList.remove('success', 'error'); // Clean up the class
+        }, 3000); // 3 seconds
+    }
+
+    // Flask-flashed messages
+    window.addEventListener('DOMContentLoaded', (event) => {
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    showFlashMessage("{{ message }}", "{{ category }}");
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    });
+
+</script>
 
 </body>
 </html>
