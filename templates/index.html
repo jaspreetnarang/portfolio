@@ -158,21 +158,13 @@
             
 
             <!-- Contact Section -->
+            <!-- Contact Section -->
             <section class="contact" id="contact">
                 <h2>Drop Me a Line!</h2>
-                <form id="contactForm" method="POST" action="/contact">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                    
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                    
-                    <button type="submit">Send Message</button>
-                </form>
+                <p>If you would like to get in touch, feel free to connect with me on LinkedIn:</p>
+                <a href="https://linkedin.com/in/jaspreetnarang83" target="_blank" class="cta-button">Connect on LinkedIn</a>
             </section>
+
             
         </div>
     </main>
@@ -229,39 +221,39 @@
         };
 
 
-    // Function to show flash message in modal
-    function showFlashMessage(message, category) {
-        const modal = document.getElementById('flashModal');
-        const flashMessageText = document.getElementById('flashMessageText');
+    // // Function to show flash message in modal
+    // function showFlashMessage(message, category) {
+    //     const modal = document.getElementById('flashModal');
+    //     const flashMessageText = document.getElementById('flashMessageText');
         
-        flashMessageText.textContent = message;
-        modal.style.display = "block";
+    //     flashMessageText.textContent = message;
+    //     modal.style.display = "block";
 
-        // Set category-specific class for the modal
-        const modalContent = modal.querySelector('.modal-content');
-        if (category === 'success') {
-            modalContent.classList.add('success');
-        } else {
-            modalContent.classList.add('error');
-        }
+    //     // Set category-specific class for the modal
+    //     const modalContent = modal.querySelector('.modal-content');
+    //     if (category === 'success') {
+    //         modalContent.classList.add('success');
+    //     } else {
+    //         modalContent.classList.add('error');
+    //     }
 
-        // Hide the modal after 3 seconds
-        setTimeout(() => {
-            modal.style.display = "none";
-            modalContent.classList.remove('success', 'error'); // Clean up the class
-        }, 3000); // 3 seconds
-    }
+    //     // Hide the modal after 3 seconds
+    //     setTimeout(() => {
+    //         modal.style.display = "none";
+    //         modalContent.classList.remove('success', 'error'); // Clean up the class
+    //     }, 3000); // 3 seconds
+    // }
 
-    // Flask-flashed messages
-    window.addEventListener('DOMContentLoaded', (event) => {
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    showFlashMessage("{{ message }}", "{{ category }}");
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    });
+    // // Flask-flashed messages
+    // window.addEventListener('DOMContentLoaded', (event) => {
+    //     {% with messages = get_flashed_messages(with_categories=true) %}
+    //         {% if messages %}
+    //             {% for category, message in messages %}
+    //                 showFlashMessage("{{ message }}", "{{ category }}");
+    //             {% endfor %}
+    //         {% endif %}
+    //     {% endwith %}
+    // });
 
 </script>
 
